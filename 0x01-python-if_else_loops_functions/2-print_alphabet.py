@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import string
-print(string.ascii_lowercase)
+lowercase_letters = ''.join([chr(i) for i in range(97, 123)])
+print(lowercase_letters)
