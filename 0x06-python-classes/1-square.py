@@ -20,4 +20,4 @@ class Square:
         Parameters:
         - size (int): The size of the square's sides.
         """
-        self._size = size
+        self.__size = size
