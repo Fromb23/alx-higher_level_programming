@@ -1,0 +1,14 @@
+>>> add_integer(3, 5)
+8
+
+>>> add_integer(3.5, 2)
+5
+
+>>> add_integer(5, 3.8)
+8
+
+>>> add_integer(2.4, 3.6)
+5
+
+>>> add_integer(-5, 10)
+5
