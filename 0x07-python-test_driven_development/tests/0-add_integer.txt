@@ -9,6 +9,8 @@
 100
 >>> add_integer(100.3, -2)
 98
+>>> add_integer(7.2)
+105
 >>> add_integer(4, "School")
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
