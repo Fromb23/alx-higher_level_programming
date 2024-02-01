@@ -1,14 +1,13 @@
->>> add_integer(3, 5)
-8
+class TestAddInteger(unittest.TestCase):
+    def test_typical_case(self):
+        self.assertEqual(add_integer(2, 3), 5)
 
->>> add_integer(3.5, 2)
-5
+    def test_default_value(self):
+        self.assertEqual(add_integer(2), 100)
 
->>> add_integer(5, 3.8)
-8
+    def test_float_conversion(self):
+        self.assertEqual(add_integer(1.5, 2.5), 3)
 
->>> add_integer(2.4, 3.6)
-5
-
->>> add_integer(-5, 10)
-5
+    def test_invalid_input(self):
+        with self.assertRaises(TypeError):
+            add_integer('2', 3)
