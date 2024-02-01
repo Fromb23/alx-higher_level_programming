@@ -8,6 +8,7 @@ This module provides a
 
 def add_integer(a, b=98):
     """
+    This function add 2 ints then return the sum
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
