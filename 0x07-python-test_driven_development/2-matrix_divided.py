@@ -17,7 +17,7 @@ def matrix_divided(matrix, div):
     containing only integers or floats.
     TypeError: If each row of the matrix does not have the same size.
     TypeError: If div is not a number (float or int).
-    ZeroDivisionError: If div is zero.
+    ZeroDivisionError: If division is zero.
     """
     for row in matrix:
         if not all(isinstance(element, (int, float)) for element in row):
