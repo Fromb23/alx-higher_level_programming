@@ -19,4 +19,4 @@ def load_from_json_file(filename):
         object: The Python object loaded from the JSON file.
     """
     with open(filename, 'r') as file:
-        return json.load(filename)
+        return json.load(file)
