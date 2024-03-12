@@ -1,5 +1,2 @@
--- list all the tables of a database
-USE mysql;
-
--- show list of tables
+-- Show list of tables in the database passed as command args
 SHOW TABLES;
