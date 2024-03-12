@@ -8,7 +8,7 @@ def square_matrix_simple(matrix=[]):
 
     # Create a new matrix with squared values
     new_matrix = [
-        [matrix[i][j] ** 2 for j in range(columns)]
+        [matrix[i][j] ** 2 for j in range(columns)
         for i in range(rows)
     ]
 
