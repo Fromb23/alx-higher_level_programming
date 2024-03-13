@@ -1,2 +1,2 @@
 -- list all rows of the first-table
-SELECT * FROM mysql;
+SELECT * FROM first_table;
