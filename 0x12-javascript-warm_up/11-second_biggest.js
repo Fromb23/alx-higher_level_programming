@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-function secondLargest(args) {
+function secondLargest (args) {
   // Convert all arguments to integers
   const integers = args.slice(2).map(Number);
 
