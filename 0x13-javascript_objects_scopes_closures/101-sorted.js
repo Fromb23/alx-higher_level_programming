@@ -3,9 +3,9 @@
 const data = require('./101-data.js');
 const dict = data.dict;
 
-let newDict = {};
+const newDict = {};
 
-for (let [userId, occurrence] of Object.entries(dict)) {
+for (const [userId, occurrence] of Object.entries(dict)) {
   if (newDict[occurrence]) {
     newDict[occurrence].push(userId);
   } else {
