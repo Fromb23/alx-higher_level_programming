@@ -24,10 +24,10 @@ def matching_args(username, password, db_name, state_name):
 
     cursor = db.cursor()
 
-    sql_query = ("SELECT MIN(id), name "
-                 "FROM states WHERE name = %s GROUP BY name")
+    sql_query = ("SELECT MIN(id), name FROM states WHERE "
+                 "name = '{}' GROUP BY name".format(state_name))
 
-    cursor.execute(sql_query, (state_name,))
+    cursor.execute(sql_query)
 
     results = sorted(cursor.fetchall())
 
