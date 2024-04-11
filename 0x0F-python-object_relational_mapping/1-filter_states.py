@@ -36,9 +36,6 @@ def list_state_n(username, password, db_name):
 
 
 if __name__ == '__main__':
-    if len(argv) != 4:
-        exit(1)
-    else:
         mysql_username = sys.argv[1]
         mysql_password = sys.argv[2]
         database_name = sys.argv[3]
