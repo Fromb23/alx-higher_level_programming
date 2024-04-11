@@ -1,28 +1,39 @@
 #!/usr/bin/python3
+"""
+List all states from the db using MySQLdb
+"""
 
 import MySQLdb
+from sys import argv
 
-connection = MySQLdb.connect(
-        user='root',
-        password='root@2024',
-        database='hbtn_0e_0_usa',
-        host='localhost',
-        port=3306
-        )
 
-# Cursor object
-cursor = connection.cursor()
+if __name__ == '__main__':
+    if len(argv) != 4:
+        exit(1)
 
-# Execute sql queries
-cursor.execute('SELECT MIN(id) as id, name FROM states GROUP BY name')
+    user, password, database = argv[1], argv[2], argv[3]
 
-# Fetch the results
-results = cursor.fetchall()
+    db = MySQLdb.connect(
+            user=user,
+            password=password,
+            database=database,
+            host='localhost',
+            port=3306
+            )
 
-results = sorted(results)
-for row in results:
-    print(row)
+    # Cursor object
+    cursor = db.cursor()
 
-# Close Connection
-cursor.close()
-connection.close()
+    # Execute sql queries
+    cursor.execute('SELECT MIN(id) as id, name FROM states GROUP BY name')
+
+    # Fetch the results
+    results = cursor.fetchall()
+
+    results = sorted(results)
+    for row in results:
+        print(row)
+
+    # Close Connection
+    cursor.close()
+    connection.close()
