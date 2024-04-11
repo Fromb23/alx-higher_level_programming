@@ -1,10 +1,18 @@
 #!/usr/bin/python3
+"""
+    This script displays all values in the states table of a MySQL
+    database where the name matches the provided argument
+"""
 
 import MySQLdb
 import sys
 from sys import argv
 
+
 def matching_args(username, password, db_name, state_name):
+    """
+    Searches for states in the MySQL database based on the provided state name
+    """
 
     db = MySQLdb.connect(
             user=username,
@@ -16,10 +24,22 @@ def matching_args(username, password, db_name, state_name):
 
     cursor = db.cursor()
 
+    sql_query = ("SELECT MIN(id), name "
+                 "FROM states WHERE name = %s GROUP BY name")
+
+    cursor.execute(sql_query, (state_name,))
+
+    results = sorted(cursor.fetchall())
+
+    for row in results:
+        print(row)
+
+    cursor.close()
+    db.close()
 
 
 if __name__ == '__main__':
-    if sys.argv != 5:
+    if len(sys.argv) != 5:
         exit(1)
     else:
         mysql_username = sys.argv[1]
