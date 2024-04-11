@@ -23,7 +23,8 @@ def list_state_n(username, password, db_name):
 
     cursor = db.cursor()
 
-    sql_query = "SELECT MIN(id), name FROM states WHERE name LIKE 'N%' GROUP BY name"
+    sql_query = ("SELECT MIN(id), name FROM states "
+                 "WHERE name LIKE 'N%' GROUP BY name")
     cursor.execute(sql_query)
 
     results = sorted(cursor.fetchall())
