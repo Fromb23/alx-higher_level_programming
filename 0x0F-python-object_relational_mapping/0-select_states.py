@@ -2,7 +2,6 @@
 """
 List all states from the db using MySQLdb
 """
-
 import MySQLdb
 import sys
 from sys import argv
