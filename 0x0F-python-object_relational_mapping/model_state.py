@@ -15,7 +15,7 @@ class State(Base):
     Represents a state in the database
     """
     __tablename__ = 'states'
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
 
 
@@ -33,3 +33,6 @@ session = Session()
 
 # Query all db using session
 state = session.query(State).all()
+
+# Close session
+session.close()
