@@ -29,7 +29,7 @@ def fetch_state_info(username, passwrd, database, state_name):
     """
     db = MySQLdb.connect(
             user=username,
-            password=passwrd,
+            passwrd=passwrd,
             db=database,
             host='localhost',
             port=3306
