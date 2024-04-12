@@ -20,7 +20,7 @@ class State(Base):
 
 
 # create engine
-engine = create_engine('mysql://root:root@localhost/hbtn_0e_6_usa')
+engine = create_engine('mysql://root:root@localhost:3306/hbtn_0e_6_usa')
 
 # Create all tables
 Base.metadata.create_all(engine)
