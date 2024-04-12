@@ -29,7 +29,7 @@ def fetch_state_info(username, passwrd, database, state_name):
     """
     db = MySQLdb.connect(
             user=username,
-            passwrd=passwrd,
+            passwd=passwrd,
             db=database,
             host='localhost',
             port=3306
@@ -37,7 +37,7 @@ def fetch_state_info(username, passwrd, database, state_name):
 
     cursor = db.cursor()
 
-    cursor.execute(("SELECT MIN(id), name FROM states "
+    cursor.execute(("SELECT id, name FROM states "
                     "WHERE name = %s GROUP BY name"), (state_name,))
 
     rows = sorted(cursor.fetchall())
@@ -52,5 +52,10 @@ def fetch_state_info(username, passwrd, database, state_name):
 if __name__ == '__main__':
     if len(sys.argv) != 5:
         sys.exit(1)
+    else:
+        _user = sys.argv[1]
+        _passwd = sys.argv[2]
+        _db = sys.argv[3]
+        _state = sys.argv[4]
 
-    fetch_state_info(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+    fetch_state_info(_user, _passwd, _db, _state)
