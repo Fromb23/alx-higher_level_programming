@@ -21,7 +21,7 @@ class State(Base):
 
 # Create engine
 engine = create_engine(('mysql+mysqldb://root:root '
-                        '@localhost:3306/hbtn_0e_6_usa'))
+                        '@localhost:3306/hbtn_0e_6_usa?charset=latin1'))
 
 # Create all tables
 Base.metadata.create_all(engine)
