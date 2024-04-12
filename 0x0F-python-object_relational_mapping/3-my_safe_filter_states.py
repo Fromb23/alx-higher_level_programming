@@ -10,7 +10,7 @@ import sys
 """
 
 
-def fetch_state_info(username, password, database, state_name):
+def fetch_state_info(username, passwrd, database, state_name):
     """
     Fetches the minimum ID and name of states
     from a MySQL database for a given state name.
@@ -28,10 +28,10 @@ def fetch_state_info(username, password, database, state_name):
         The minimum ID and name of states matching the given state name.
     """
     db = MySQLdb.connect(
-            host='localhost',
             user=username,
-            passwd=password,
+            password=passwrd,
             db=database,
+            host='localhost',
             port=3306
             )
 
