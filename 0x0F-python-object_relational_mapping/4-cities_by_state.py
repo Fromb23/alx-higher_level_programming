@@ -13,16 +13,18 @@ def list_all_cities(username, password, database):
     """
 
     db = MySQLdb.connect(
-            usrname=username,
+            user=username,
             passwd=password,
-            db_name=database,
+            db=database,
             host='localhost',
             port=3306
             )
 
     cursor = db.cursor()
 
-    sql_query = "SELECT * FROM cities ORDER BY id ASC"
+    sql_query = ("SELECT cities.id, cities.name, states.name FROM cities "
+                 "JOIN states ON cities.state_id = states.id "
+                 "ORDER BY cities.id ASC")
 
     cursor.execute(sql_query)
 
@@ -36,7 +38,7 @@ def list_all_cities(username, password, database):
 
 
 if __name__ == '__main__':
-    if sys.argv != 4:
+    if len(sys.argv) != 4:
         exit(1)
     else:
         _username = sys.argv[1]
