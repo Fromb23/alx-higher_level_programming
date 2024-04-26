@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+    takes url as an arg then returns X-Request_Id
+"""
 
 if __name__ == '__main__':
     import requests
