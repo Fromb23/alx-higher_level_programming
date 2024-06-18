@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
-const Square = require('./5-square');
+const pSquare = require('./5-square');
 
-class childSquare extends Square {
+class Square extends pSquare {
   charPrint (c) {
     if (c === undefined) {
       c = 'X';
@@ -17,4 +17,4 @@ class childSquare extends Square {
   }
 }
 
-module.exports = childSquare;
+module.exports = Square;
