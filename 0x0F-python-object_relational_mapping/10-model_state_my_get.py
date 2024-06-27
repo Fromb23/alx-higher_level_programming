@@ -9,6 +9,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import and_
 from model_state import Base, State
 
+
 def list_state_by_name(username, password, dbname, state_name):
     """
     Prints the sate obj wit the specified name from the db
