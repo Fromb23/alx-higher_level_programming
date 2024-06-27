@@ -49,4 +49,3 @@ if __name__ == '__main__':
         password = sys.argv[2]
         dbname = sys.argv[3]
         add_louisiana(username, password, dbname)
-
