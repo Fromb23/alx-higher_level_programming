@@ -41,10 +41,11 @@ def list_state_by_name(username, password, dbname, state_name):
     # Close the session
     session.close()
 
-    if __name__ == '__main__':
-        if len(sys.argv) == 5:
-            username = sys.argv[1]
-            password = sys.argv[2]
-            dbname = sys.argv[3]
-            state_name = sys.argv[4]
-            list_state_by_name(username, password, dbname, state_name)
+
+if __name__ == '__main__':
+    if len(sys.argv) == 5:
+        username = sys.argv[1]
+        password = sys.argv[2]
+        dbname = sys.argv[3]
+        state_name = sys.argv[4]
+        list_state_by_name(username, password, dbname, state_name)
